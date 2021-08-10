@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="container">
+    <h4>Edit the Details of <span class="text-success">{{ name }}:</span> </h4>
+
+    {{ form.hidden_tag() }}
+    {{ wtf.quick_form(form) }}
+
+  </div>
+{% endblock %}

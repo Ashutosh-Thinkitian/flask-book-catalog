@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title%} Log IN {% endblock %}
+
+{% block content %}
+    <div class="container form">
+        <h4>Loin Here</h4>
+        <hr><br>
+        {{ wtf.quick_form(form) }}  <!--Automatically generated form -->
+    </div>
+{% endblock content %}

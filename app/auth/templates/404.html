@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <br>
+    <div class="container text-center">
+        <h4 class=" text-warning">That page you are looking for could not be found ..!</h4>
+        <img src="https://www.lifewire.com/thmb/I0ypEHq4-en9PssKYeiVwlB5iAg=/1500x844/smart/filters:no_upscale()/404-not-found-error-explained-2622936-b5abe50f71c1433e8112ba57b5de5346.png" class="rounded mx-auto d-block" alt="..." heigth="500" width="500">
+        <br><br>
+        <span class="label label-primary">
+            <a type="button" href="{{ url_for('main.display_books') }}" style="color:white">
+                Back To Home
+            </a>
+        </span>
+    </div>
+{% endblock content %}
