@@ -1,6 +1,7 @@
 from app import create_app, db
 
 from app.auth.models import User
+from sqlalchemy import exc
 
 flask_app = create_app('prod')
 
@@ -8,7 +9,8 @@ flask_app = create_app('prod')
 # tell to flask use current application context
 with flask_app.app_context():
     db.create_all()
-
-    if not User.query.filter_by(user_name='ashu').first():
-        User.create_user(user='ashu', email='ashutosh.patil@thinkitive.com', password='11121997')
+    try:
+        if not User.query.filter_by(user_name='ashu').first():
+            User.create_user(user='ashu', email='ashutosh.patil@thinkitive.com', password='11121997')
+    except exc.IntegrityError:
         flask_app.run()
